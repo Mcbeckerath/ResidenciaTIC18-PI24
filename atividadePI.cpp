@@ -46,12 +46,6 @@ class Evento {
         Evento(int d){
          duracao = d;
         }
-    /*int getDuracao(){
-        return duracao;
-    }
-    void setDuracao(int d){
-        duracao = d;
-    }*/
 };
 
 class Pacote{
@@ -73,6 +67,45 @@ class Pacote{
             }
             
         }
+};
+
+
+class Roteiro:public Evento{
+    public:
+        string atividade;
+        Roteiro(int d, string _atividade):Evento(d){
+            atividade = _atividade;
+        }
+     
+};
+
+class Deslocamento: public Evento{
+    public:
+        string origem;
+        string destino;
+        Deslocamento(int d, string _origem, string _destino):Evento(d){
+            origem = _origem;
+            destino = _destino;
+        }
+};
+
+class Pernoite: public Evento{
+    public:
+        string local;
+        Pernoite(int d, string _local):Evento(d){
+            local = _local;
+        }
+};
+
+class Reserva{
+    public:
+        Cliente* clienteptr;
+        Pacote* pacoteptr;
+        Reserva(Cliente* _clienteptr, Pacote* _pacoteptr){
+            clienteptr = _clienteptr;
+            pacoteptr = _pacoteptr;
+        }
+
 };
 
 int main(){
