@@ -33,8 +33,7 @@ class Cliente{
             {
                 cout << d.nome << endl;
             }
-            
-        }
+        }    
 };
 
 
@@ -108,6 +107,14 @@ class Reserva{
 
 };
 
+class App{
+    public:
+     void cadastrarCliente(string _nome, string _cpf){
+       Cliente novoCliente(_nome, _cpf);
+       return novoCliente;
+    }   
+};
+
 int main(){
     vector<Cliente>veccli;
    // vector<Dependente*>vecdep;
@@ -116,6 +123,7 @@ int main(){
     Dependente d1("Adriano Filho");
     c1.novoDependente(d1);
     c1.listaDependente();
+    App.cadastrarCliente("Bruno", "222222");
     
     
     
