@@ -12,6 +12,7 @@ class Dependente{
         Dependente(string n){
             nome = n;
         }
+        
       
 };
 class Cliente{
@@ -26,6 +27,14 @@ class Cliente{
     void novoDependente(Dependente d){
         dependentes.push_back(d);
     }
+    void listaDependente(){
+            cout << "Dependente de " << nome << endl;
+            for (Dependente d: dependentes)            
+            {
+                cout << d.nome << endl;
+            }
+            
+        }
 };
 
 
@@ -34,10 +43,9 @@ class Evento {
     private: 
     public:   
         int duracao;
-    
-         Evento(int d){
+        Evento(int d){
          duracao = d;
-    }
+        }
     /*int getDuracao(){
         return duracao;
     }
@@ -69,8 +77,14 @@ class Pacote{
 
 int main(){
     vector<Cliente>veccli;
+   // vector<Dependente*>vecdep;
     Cliente c1("Adriano","111111");
     veccli.push_back(c1);
+    Dependente d1("Adriano Filho");
+    c1.novoDependente(d1);
+    c1.listaDependente();
+    
+    
     
     return 0;
 }
